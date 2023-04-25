@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnBuscarCep;
     EditText txtCep;
-    TextView lblResposta;
+    TextView lblCEP, lblLogradouro, lblComplemento, lblBairro, lblCidade, lblEstado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txtCep = findViewById(R.id.txtCep);
-        lblResposta = findViewById(R.id.lblResposta);
+        lblCEP = findViewById(R.id.lblCEP);
+        lblLogradouro = findViewById(R.id.lblLogradouro);
+        lblComplemento = findViewById(R.id.lblComplemento);
+        lblBairro = findViewById(R.id.lblBairro);
+        lblCidade = findViewById(R.id.lblCidade);
+        lblEstado = findViewById(R.id.lblEstado);
         btnBuscarCep = findViewById(R.id.btnBuscaCep);
 
         btnBuscarCep.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     //preencher o cep no lblResposta do layout
                     CEP retorno = new HttpService(txtCep.getText().toString().trim()).execute().get();
-                    lblResposta.setText(retorno.toString());
+                    lblCEP.setText(retorno.getCep().toString());
+                    lblLogradouro.setText(retorno.getLogradouro().toString());
+                    lblComplemento.setText(retorno.getComplemento().toString());
+                    lblBairro.setText(retorno.getBairro().toString());
+                    lblCidade.setText(retorno.getLocalidade().toString());
+                    lblEstado.setText(retorno.getUf().toString());
+
+
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {

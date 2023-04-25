@@ -43,7 +43,7 @@ public class HttpService extends AsyncTask<Void, Void, CEP> {
                 Scanner scanner = new Scanner(url.openStream());
 
                 while (scanner.hasNext()) {
-                    resposta.append(scanner.next());
+                    resposta.append(scanner.nextLine());
                 }
 
             } catch (MalformedURLException e) {
