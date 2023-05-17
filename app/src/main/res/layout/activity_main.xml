@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="50dp"
     tools:context=".MainActivity">
 
@@ -25,6 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -41,17 +42,19 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/lblCEP"
+            android:id="@+id/lblendereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Endereço"
             android:padding="5dp"
             android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/lblLogradouro"
+            android:id="@+id/lblnum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Numero"
             android:padding="5dp"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -60,6 +63,7 @@
             android:id="@+id/lblComplemento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Complemento"
             android:padding="5dp"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -68,6 +72,7 @@
             android:id="@+id/lblBairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Bairro"
             android:padding="5dp"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -76,17 +81,15 @@
             android:id="@+id/lblCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Cidade"
             android:padding="5dp"
             android:textColor="#000000"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/lblEstado"
+        <Spinner
+            android:id="@+id/spnEstado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,12 +120,14 @@
 
         </LinearLayout>
     </LinearLayout>
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|right"
-    android:layout_margin="16dp"
-    android:contentDescription="Cadastrar"
-    android:src="@drawable/baseline_add"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btncad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:contentDescription="Cadastrar"
+        android:src="@drawable/baseline_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

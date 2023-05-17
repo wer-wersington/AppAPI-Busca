@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnBuscarCep;
     EditText txtCep;
     TextView lblCEP, lblLogradouro, lblComplemento, lblBairro, lblCidade, lblEstado;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         lblCidade = findViewById(R.id.lblCidade);
         lblEstado = findViewById(R.id.lblEstado);
         btnBuscarCep = findViewById(R.id.btnBuscaCep);
+        spinner = findViewById(R.id.spnEstado);
 
         btnBuscarCep.setOnClickListener(new View.OnClickListener() {
             @Override
